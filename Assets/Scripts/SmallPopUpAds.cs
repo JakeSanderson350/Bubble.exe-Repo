@@ -11,7 +11,7 @@ public class SmallPopUpAds : MonoBehaviour
         //store position
         originalPos = gameObject.transform.position;
         //spawn 2 extra ads
-        SpawnExtraAds();
+        //SpawnExtraAds();
     }
 
     public void ExitAd()
