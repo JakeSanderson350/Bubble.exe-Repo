@@ -51,6 +51,7 @@ public class ReadEmailTask : MonoBehaviour
         if (checkAllEmailsChecked())
         {
             ParentObj.SetActive(false);
+            //Let manager know
         }
     }
 
