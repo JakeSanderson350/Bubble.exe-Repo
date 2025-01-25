@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Notepad icon_0: -6633769238856568573
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
