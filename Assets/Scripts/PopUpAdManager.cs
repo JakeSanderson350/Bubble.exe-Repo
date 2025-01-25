@@ -35,7 +35,7 @@ public class PopUpAdManager : MonoBehaviour
     {
         if ((Mathf.Round(currentTime * 100) / 100f) > 5)
         {
-            if ((Mathf.Round(currentTime * 100) / 100f) % 1 == 0)
+            if ((Mathf.Round(currentTime * 100) / 100f) % 10 == 0)
             {
                 //select random spawnpoint
                 selectedSpawn = spawnPoints[Random.Range(0, spawnPoints.Length)];
@@ -45,7 +45,7 @@ public class PopUpAdManager : MonoBehaviour
                 Vector3 randPos = new Vector3(Random.Range(-50, 110), Random.Range(100, -110), 0);
                 Vector3 newPos = spawnPos + randPos;
                 Instantiate(adsList[Random.Range(0, adsList.Length)], newPos, Quaternion.identity, canvas.transform);
-                //Instantiate(adsList[0], newPos, Quaternion.identity, canvas.transform);
+                
             }
         }
     }
