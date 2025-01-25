@@ -1,0 +1,69 @@
+using System.Threading;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class LoadingBarScript : MonoBehaviour
+{
+    public GameObject loadingWindow;
+    public GameObject loginWindow;
+    public Image[] loadPoints;
+
+    [SerializeField] float currentload = 0;
+    [SerializeField] float loadspeedmultiplier = 0f;
+
+    bool isLoading = false;
+
+    private void Start()
+    {
+        loadingWindow.SetActive(false);
+    }
+    void Update()
+    {
+        float lerpSpeed = 3f * Time.deltaTime;
+
+        if (isLoading)
+        {
+            currentload += (loadspeedmultiplier * Time.deltaTime);
+        }
+        if (currentload < 200)
+        {
+            loadspeedmultiplier = 5;
+        }
+
+        if (currentload > 95 && currentload <= 105)
+        {
+            loadspeedmultiplier = 0.5f;
+        }
+        else if (currentload > 105)
+        {
+            loadspeedmultiplier = 15;
+        }
+
+        LoadingBarFiller();
+
+        if (currentload == 200)
+        {
+            loadingWindow.SetActive(false);
+        }
+    }
+    public void turnOnLoadingBar()
+    {
+        isLoading = true;
+        loadingWindow.SetActive(true);
+        loginWindow.SetActive(false);
+    }
+   
+    void LoadingBarFiller()
+    {
+        //enables load point images 
+        for (int i = 0; i < loadPoints.Length; i++)
+        {
+            loadPoints[i].enabled = !DisplayLoadPoint(currentload, i);
+        }
+    }
+
+    bool DisplayLoadPoint(float _load, int loadPointNumber)
+    {
+        return ((loadPointNumber * 10) >= _load);
+    }
+}
