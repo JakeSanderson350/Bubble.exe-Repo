@@ -11,7 +11,7 @@ public class SmallPopUpAds : MonoBehaviour
         //store position
         originalPos = gameObject.transform.position;
         //spawn 2 extra ads
-        //SpawnExtraAds();
+        SpawnExtraAds();
     }
 
     public void ExitAd()
@@ -23,7 +23,7 @@ public class SmallPopUpAds : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
-            Vector3 randPos = new Vector3(Random.Range(-50, 110), Random.Range(100, -110), 0);
+            Vector3 randPos = new Vector3(Random.Range(-10, 55), Random.Range(20, -45), 0);
             Vector3 newPos = originalPos + randPos;
             Instantiate(ExtraAds, newPos, Quaternion.identity, CanvasTransform);
         }

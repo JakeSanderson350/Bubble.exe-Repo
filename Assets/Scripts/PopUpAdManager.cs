@@ -7,10 +7,14 @@ public class PopUpAdManager : MonoBehaviour
     [SerializeField] static public Canvas canvas;
     [SerializeField] float currentTime;
     public GameObject selectedSpawn;
-   
-    void Start()
+
+    private void Awake()
     {
         canvas = FindFirstObjectByType<Canvas>();
+    }
+    void Start()
+    {
+        
         currentTime = 0f;
     }
 
