@@ -1,6 +1,7 @@
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LoadingBarScript : MonoBehaviour
 {
@@ -41,9 +42,12 @@ public class LoadingBarScript : MonoBehaviour
 
         LoadingBarFiller();
 
-        if (currentload == 200)
+        //checks if the loading bar is finished
+        if (currentload >= 200)
         {
+            isLoading = false;
             loadingWindow.SetActive(false);
+            loadDesktopScene();
         }
     }
     public void turnOnLoadingBar()
@@ -65,5 +69,10 @@ public class LoadingBarScript : MonoBehaviour
     bool DisplayLoadPoint(float _load, int loadPointNumber)
     {
         return ((loadPointNumber * 10) >= _load);
+    }
+
+    void loadDesktopScene()
+    {
+        SceneManager.LoadScene("DesktopScene");
     }
 }
