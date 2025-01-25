@@ -5,18 +5,29 @@ using UnityEngine.UI;
 public class LoadingBarScript : MonoBehaviour
 {
     public GameObject loadingWindow;
+    public GameObject loginWindow;
     public Image[] loadPoints;
 
     [SerializeField] float currentload = 0;
-    [SerializeField] float loadspeedmultiplier = 5f;
-   
+    [SerializeField] float loadspeedmultiplier = 0f;
+
+    bool isLoading = false;
+
+    private void Start()
+    {
+        loadingWindow.SetActive(false);
+    }
     void Update()
     {
         float lerpSpeed = 3f * Time.deltaTime;
 
-        if (currentload < 200)
+        if (isLoading)
         {
             currentload += (loadspeedmultiplier * Time.deltaTime);
+        }
+        if (currentload < 200)
+        {
+            loadspeedmultiplier = 5;
         }
 
         if (currentload > 95 && currentload <= 105)
@@ -29,8 +40,19 @@ public class LoadingBarScript : MonoBehaviour
         }
 
         LoadingBarFiller();
-    }
 
+        if (currentload == 200)
+        {
+            loadingWindow.SetActive(false);
+        }
+    }
+    public void turnOnLoadingBar()
+    {
+        isLoading = true;
+        loadingWindow.SetActive(true);
+        loginWindow.SetActive(false);
+    }
+   
     void LoadingBarFiller()
     {
         //enables load point images 
