@@ -4,8 +4,8 @@ using UnityEngine;
 public class SmallPopUpAds : MonoBehaviour
 {
     [SerializeField] GameObject ExtraAds;
-    [SerializeField] Canvas canvas;
     Vector3 originalPos;
+    Transform CanvasTransform { get { return PopUpAdManager.canvas.transform; } }
     void Start()
     {
         //store position
@@ -25,7 +25,7 @@ public class SmallPopUpAds : MonoBehaviour
         {
             Vector3 randPos = new Vector3(Random.Range(-50, 110), Random.Range(100, -110), 0);
             Vector3 newPos = originalPos + randPos;
-            Instantiate(ExtraAds, newPos, Quaternion.identity, canvas.transform);
+            Instantiate(ExtraAds, newPos, Quaternion.identity, CanvasTransform);
         }
     }
 }
