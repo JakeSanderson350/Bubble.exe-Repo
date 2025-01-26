@@ -42,7 +42,7 @@ public class PopUpAdManager : MonoBehaviour
                 Vector3 spawnPos = selectedSpawn.transform.position;
 
                 //spawn random ad at a random position near selected spawnpoint
-                Vector3 randPos = new Vector3(Random.Range(-50, 110), Random.Range(100, -110), 0);
+                Vector3 randPos = new Vector3(Random.Range(-2, 1), Random.Range(1, -2), 0);
                 Vector3 newPos = spawnPos + randPos;
                 Instantiate(adsList[Random.Range(0, adsList.Length)], newPos, Quaternion.identity, canvas.transform);
                 

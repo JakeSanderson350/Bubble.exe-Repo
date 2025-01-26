@@ -23,7 +23,7 @@ public class SmallPopUpAds : MonoBehaviour
     {
         for (int i = 0; i < 2; i++)
         {
-            Vector3 randPos = new Vector3(Random.Range(-10, 55), Random.Range(20, -45), 0);
+            Vector3 randPos = new Vector3(Random.Range(-1, 3), Random.Range(2, -1), 0);
             Vector3 newPos = originalPos + randPos;
             Instantiate(ExtraAds, newPos, Quaternion.identity, CanvasTransform);
         }
