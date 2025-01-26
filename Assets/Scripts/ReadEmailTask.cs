@@ -18,8 +18,9 @@ public class ReadEmailTask : MonoBehaviour
 
     private bool[] emailIsChecked;
 
-    private string[] emailSubjects = { "Balls", "yuh", "gagahagahgagah", "3 2 1 CCOOOOOLLLL", "Seeyuhh", "Bubble type shi", "ummmm" };
-    private string[] emailMessages = { "Balls.....", "yuh.....", "gagahagahgagah.....", "3 2 1 CCOOOOOLLLL.....", "Seeyuhh.....", "Bubble type shi.....", "ummmm......" };
+    private string[] emailSubjects = { "Balls", "yuh", "gagahagahgagah", "3 2 1 CCOOOOOLLLL", "Seeyuhh", "Bubble ty shi" };
+    private string[] emailSubjectsTmp;
+    private string[] emailMessages = { "Balls.....", "yuh.....", "gagahagahgagah.....", "3 2 1 CCOOOOOLLLL.....", "Seeyuhh.....", "Bubble type shi....." };
 
     private Dictionary<string, string> emailTable;
 
@@ -37,10 +38,17 @@ public class ReadEmailTask : MonoBehaviour
                 emailTable.Add(emailSubjects[i], emailMessages[i]);
             }
 
-            shuffleText();
-            for (int i = 0; i < emailButtons.Length; i++)
+            emailSubjectsTmp = new string[emailSubjects.Length];
+            for(int i = 0; i < emailSubjectsTmp.Length; i++)
             {
-                emailHeaders[i].text = emailSubjects[i];
+                emailSubjectsTmp[i] = emailSubjects[i].ToString();
+            }
+
+            shuffleText();
+
+            for (int i = 0; i < emailSubjects.Length; i++)
+            {
+                emailHeaders[i].text = emailSubjectsTmp[i];
             }
         }
     }
@@ -71,7 +79,7 @@ public class ReadEmailTask : MonoBehaviour
     {
         emailIsChecked[emailIndex] = true;
 
-        emailText.text = emailTable[emailSubjects[emailIndex]];
+        emailText.text = emailTable[emailSubjectsTmp[emailIndex]];
         emailHeaders[emailIndex].text = "Checked";
     }
 
@@ -81,10 +89,10 @@ public class ReadEmailTask : MonoBehaviour
 
         for (int i = 0; i < 10; i++) 
         {
-            index1 = Random.Range(0, emailSubjects.Length);
-            index2 = Random.Range(0, emailSubjects.Length);
+            index1 = Random.Range(0, emailSubjectsTmp.Length);
+            index2 = Random.Range(0, emailSubjectsTmp.Length);
 
-            swap(emailSubjects, index1, index2);
+            swap(emailSubjectsTmp, index1, index2);
         }
     }
 
