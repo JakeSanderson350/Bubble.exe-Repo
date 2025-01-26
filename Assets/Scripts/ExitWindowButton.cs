@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class ExitWindowButton : MonoBehaviour
 {
-    [SerializeField] GameObject notePad;
+    [SerializeField] GameObject window;
    public void CloseWindow()
     {
-        notePad.SetActive(false);
+        window.SetActive(false);
     }
 }
