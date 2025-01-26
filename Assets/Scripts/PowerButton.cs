@@ -54,7 +54,7 @@ public class PowerButton : MonoBehaviour
         screenHit.color = new Vector4(screenHit.color.r, screenHit.color.g, screenHit.color.b, alpha);
         alpha = Mathf.Lerp(212, 1f, lerpCounter);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         screenHitOBJ.SetActive(false);
 
         isLerping = false;

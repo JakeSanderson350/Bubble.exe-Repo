@@ -3432,8 +3432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  screenHitOBJ: {fileID: 0}
-  screenHit: {fileID: 0}
+  screenHitOBJ: {fileID: 2121164920}
+  screenHit: {fileID: 2121164922}
 --- !u!61 &1793260747
 BoxCollider2D:
   m_ObjectHideFlags: 0
