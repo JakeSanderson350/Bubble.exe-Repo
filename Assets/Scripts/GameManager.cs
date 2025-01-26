@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //SceneManager.LoadScene(1);
+            SceneManager.LoadScene("GameLoseScene");
             Debug.Log("Ur asss");
         }
     }
