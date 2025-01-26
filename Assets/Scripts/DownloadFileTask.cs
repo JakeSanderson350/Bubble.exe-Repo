@@ -9,6 +9,7 @@ public class DownloadFileTask : MonoBehaviour
 
     [SerializeField]
     GameObject loadingBar;
+    public GameObject downloadScreen;
 
     [SerializeField]
     GameObject ParentObj;
@@ -62,13 +63,14 @@ public class DownloadFileTask : MonoBehaviour
 
         LoadingBarFiller();
 
-        if (loadProgress > 200)
+        if (loadProgress >= 200)
         {
             isDownloaded = true;
-            //isDownloading = false;
+            isDownloading = false;
 
+            buttonText.text = "Done";
             // Disable loadingBar and have completed icon
-            loadingBar.SetActive(false);
+            //loadingBar.SetActive(false);
         }
     }
 
@@ -92,7 +94,8 @@ public class DownloadFileTask : MonoBehaviour
         {
             isDownloading = true;
             loadingBar.SetActive(true);
-            loadSpeedMultiplier = 30.0f;
+            downloadScreen.SetActive(true);
+            loadSpeedMultiplier = 5.0f;
 
             buttonText.text = "Close";
         }
@@ -102,8 +105,10 @@ public class DownloadFileTask : MonoBehaviour
     {
         if (isDownloaded)
         {
-            ParentObj.SetActive(false);
             TaskManagerScript.taskManagerInstance.Task4Complete();
+            //ParentObj.SetActive(false);
+            downloadScreen.SetActive(false);
+            
         }
     }
 }
