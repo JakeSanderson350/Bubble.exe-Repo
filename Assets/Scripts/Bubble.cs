@@ -5,7 +5,8 @@ public class Bubble : MonoBehaviour
 {
     [SerializeField]
     Rigidbody2D rb;
-
+    public Animator animator;
+    public AudioSource audioSource;
     
     public Vector3 powerButtonPos;
 
@@ -50,8 +51,9 @@ public class Bubble : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             // Play Animation
-
-            Invoke("popBubble", 0.2f);
+            animator.SetBool("hasPopped", true);
+            audioSource.Play();
+            Invoke("popBubble", 0.4f);
         }
     }
 
