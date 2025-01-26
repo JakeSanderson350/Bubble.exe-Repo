@@ -58,7 +58,8 @@ public class ReadEmailTask : MonoBehaviour
     {
         if (checkAllEmailsChecked())
         {
-            ParentObj.SetActive(false);
+            //couldn't be opened to send email if it was set inactive
+            //ParentObj.SetActive(false);
             //Let manager know
         }
     }
