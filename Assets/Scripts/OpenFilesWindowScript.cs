@@ -6,6 +6,9 @@ public class OpenFilesWindowScript : MonoBehaviour
 
     public void OpenFileWindow()
     {
-        fileWindow.SetActive(true);
+        if (TaskManagerScript.taskManagerInstance.taskComplete[0])
+        {
+            fileWindow.SetActive(true);
+        }
     }
 }
