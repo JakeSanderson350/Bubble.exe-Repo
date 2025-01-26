@@ -5,6 +5,6 @@ public class ExitNotepadScript : MonoBehaviour
     [SerializeField] GameObject window;
     public void CloseWindow()
     {
-        window.SetActive(false);
+        window.transform.localScale = new Vector3(0, 0, 0);
     }
 }
