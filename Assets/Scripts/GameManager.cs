@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
     {
         if (gameWon)
         {
-            //SceneManager.LoadScene(1);
+            SceneManager.LoadScene("GameWinScene");
             Debug.Log("You da goat");
         }
         else
