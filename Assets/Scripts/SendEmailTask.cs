@@ -51,6 +51,7 @@ public class SendEmailTask : MonoBehaviour
         if (emailDone)
         {
             emailText.text = "Email Sent!";
+            TaskManagerScript.taskManagerInstance.Task3Complete();
 
             Invoke("closeWindow", 2.0f);
         }

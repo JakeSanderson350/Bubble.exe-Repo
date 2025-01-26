@@ -103,6 +103,7 @@ public class DownloadFileTask : MonoBehaviour
         if (isDownloaded)
         {
             ParentObj.SetActive(false);
+            TaskManagerScript.taskManagerInstance.Task4Complete();
         }
     }
 }

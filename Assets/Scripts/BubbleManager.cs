@@ -5,9 +5,6 @@ public class BubbleManager : MonoBehaviour
     [SerializeField]
     GameObject bubblePrefab;
 
-    [SerializeField]
-    Transform powerButtonTransform;
-
     private float currentTime = 0;
     private int currentTimeInt = 2;
     private int numSpawns = 1;

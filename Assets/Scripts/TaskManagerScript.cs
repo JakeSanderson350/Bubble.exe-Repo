@@ -9,28 +9,59 @@ public class TaskManagerScript : MonoBehaviour
     [SerializeField] TMP_Text task3;
     [SerializeField] TMP_Text task4;
 
+    private bool[] taskComplete;
+
+    public static TaskManagerScript taskManagerInstance;
+
+    private void Awake()
+    {
+        if (taskManagerInstance == null)
+        {
+            taskManagerInstance = this;
+        }
+    }
+    private void Start()
+    {
+        taskComplete = new bool[4];
+    }
     private void Update()
     {
-      
+        
     }
 
-    void Task1Complete()
+    public void Task1Complete()
     {
         task1.fontStyle = FontStyles.Strikethrough | FontStyles.Bold;
+        taskComplete[0] = true;
     }
 
-    void Task2Complete()
+    public void Task2Complete()
     {
         task2.fontStyle = FontStyles.Strikethrough | FontStyles.Bold;
+        taskComplete[1] = true;
     }
 
-    void Task3Complete()
+    public void Task3Complete()
     {
         task3.fontStyle = FontStyles.Strikethrough | FontStyles.Bold;
+        taskComplete[2] = true;
     }
 
-    void Task4Complete()
+    public void Task4Complete()
     {
         task4.fontStyle = FontStyles.Strikethrough | FontStyles.Bold;
+        taskComplete[3] = true;
+    }
+
+    public bool allTasksDone()
+    {
+        foreach (bool isChecked in taskComplete)
+        {
+            if (!isChecked)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7240947942515122466}
   - component: {fileID: 1907650364114394978}
   - component: {fileID: 2936887292315231205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BubbleRender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 6324937064120021520}
   - component: {fileID: 6287499944691049146}
   - component: {fileID: 8842864452976366827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,3 +201,4 @@ MonoBehaviour:
   powerButtonPos: {x: 0, y: -5, z: 0}
   bubbleTransform: {fileID: 7240947942515122466}
   circleCollider: {fileID: 2936887292315231205}
+  isMovingToPower: 0

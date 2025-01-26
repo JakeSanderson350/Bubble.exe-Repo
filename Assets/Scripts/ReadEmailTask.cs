@@ -61,6 +61,7 @@ public class ReadEmailTask : MonoBehaviour
             //couldn't be opened to send email if it was set inactive
             //ParentObj.SetActive(false);
             //Let manager know
+            TaskManagerScript.taskManagerInstance.Task2Complete();
         }
     }
 
