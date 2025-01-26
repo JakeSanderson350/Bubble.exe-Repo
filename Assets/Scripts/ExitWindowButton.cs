@@ -2,9 +2,17 @@ using UnityEngine;
 
 public class ExitWindowButton : MonoBehaviour
 {
-    [SerializeField] GameObject notePad;
-   public void CloseWindow()
+    [SerializeField] GameObject window;
+    [SerializeField] GameObject hideBars;
+    [SerializeField] GameObject textBody;
+    [SerializeField] GameObject readText;
+    public void CloseWindow()
     {
-        notePad.SetActive(false);
+        
+        textBody.SetActive(false);
+        hideBars.SetActive(true);
+        readText.SetActive(false);
+
+        window.SetActive(false);
     }
 }
