@@ -21,6 +21,8 @@ public class DownloadFileTask : MonoBehaviour
     private bool isDownloading = false;
     private bool isDownloaded = false;
 
+    public AudioSource audioSource;
+    bool hasPlayed = false;
     // Loading Bar variables
     [SerializeField] Image[] loadPoints;
 
@@ -30,6 +32,7 @@ public class DownloadFileTask : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         buttonText.text = "Download";
 
         loadingBar.SetActive(false);
@@ -58,6 +61,11 @@ public class DownloadFileTask : MonoBehaviour
         }
         else if (loadProgress < 105)
         {
+            if (!hasPlayed)
+            {
+                audioSource.Play();
+                hasPlayed = true;
+            }
             loadSpeedMultiplier = 0.5f;
         }
         else if (loadProgress < 200)

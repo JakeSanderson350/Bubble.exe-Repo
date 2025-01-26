@@ -9,6 +9,8 @@ public class TaskManagerScript : MonoBehaviour
     [SerializeField] TMP_Text task3;
     [SerializeField] TMP_Text task4;
 
+    private AudioSource audioSource;
+
     public bool[] taskComplete;
 
     public static TaskManagerScript taskManagerInstance;
@@ -22,6 +24,7 @@ public class TaskManagerScript : MonoBehaviour
     }
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         taskComplete = new bool[4];
     }
     private void Update()
@@ -36,6 +39,7 @@ public class TaskManagerScript : MonoBehaviour
 
         //Start Bubbles
         GameManager.gameInstance.turnOnBubbles();
+        audioSource.Play();
     }
 
     public void Task2Complete()
