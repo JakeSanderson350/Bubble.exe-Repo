@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     GameObject bubbleManager;
-
+    public AudioSource audioSource;
+    public AudioClip[] audioClips;
+    bool[] hasPlayed = new bool[4];
     [SerializeField]
     TMP_Text timeText;
 
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         if (gameInstance == null)
         {
             gameInstance = this;
@@ -30,6 +33,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource.PlayOneShot(audioClips[0]);
         bubbleManager.SetActive(false);
     }
 
@@ -50,9 +54,24 @@ public class GameManager : MonoBehaviour
         {
             currentTime += Time.fixedDeltaTime;
 
-            timeText.text = "4:5" + (5 + (int)((currentTime / totalGameTime) * 5)) + " PM";
-            Debug.Log((5 + (int)((currentTime / totalGameTime) * 5)));
+            timeText.text = "4:5" + (7 + (int)((currentTime / totalGameTime) * 3)) + " PM";
+            //Debug.Log((5 + (int)((currentTime / totalGameTime) * 5)));
 
+            if(currentTime > 10.0f && !hasPlayed[1])
+            {
+                audioSource.PlayOneShot(audioClips[1]);
+                hasPlayed[1] = true;
+            }
+            else if (currentTime > 60.0f && !hasPlayed[2])
+            {
+                audioSource.PlayOneShot(audioClips[2]);
+                hasPlayed[2] = true;
+            }
+            else if(currentTime > 120.0f && !hasPlayed[3])
+            {
+                audioSource.PlayOneShot(audioClips[3]);
+                hasPlayed[3] = true;
+            }
             if (currentTime > totalGameTime)
             {
                 gameOn = false;
