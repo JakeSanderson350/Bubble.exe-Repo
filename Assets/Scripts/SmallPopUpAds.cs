@@ -4,6 +4,7 @@ using UnityEngine;
 public class SmallPopUpAds : MonoBehaviour
 {
     [SerializeField] GameObject ExtraAds;
+    
     Vector3 originalPos;
     Transform CanvasTransform { get { return PopUpAdManager.canvas.transform; } }
     void Start()
@@ -16,6 +17,7 @@ public class SmallPopUpAds : MonoBehaviour
 
     public void ExitAd()
     {
+        
         Destroy(gameObject);
     }
 

@@ -14,13 +14,13 @@ public class WidePopUpAds : MonoBehaviour
 
     public void Buttons()
     {
-       exitButtons[currentButtonIndex].gameObject.SetActive(false);
-       exitButtons[currentButtonIndex+1].gameObject.SetActive(true);
+        exitButtons[currentButtonIndex].gameObject.transform.localScale = new Vector3(0, 0, 0);
+        exitButtons[currentButtonIndex + 1].gameObject.transform.localScale = new Vector3(0.7083201f, 0.7083201f, 0.7083201f);
         currentButtonIndex++;
     }
 
     public void ExitButton()
     {
         Destroy(gameObject);
-    }    
+    }
 }
