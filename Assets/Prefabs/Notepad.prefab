@@ -281,7 +281,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Go through emails'
+  m_text: '- Send email to team'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94f030611d2e5464fa92c29640aac7f2, type: 2}
   m_sharedMaterial: {fileID: 6271526809268049236, guid: 94f030611d2e5464fa92c29640aac7f2, type: 2}
@@ -473,8 +473,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4508474097646576060}
-        m_TargetAssemblyTypeName: ExitWindowButton, Assembly-CSharp
+      - m_Target: {fileID: 8278250492080614445}
+        m_TargetAssemblyTypeName: ExitNotepadScript, Assembly-CSharp
         m_MethodName: CloseWindow
         m_Mode: 1
         m_Arguments:
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Send email to boss'
+  m_text: '- Go through emails'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94f030611d2e5464fa92c29640aac7f2, type: 2}
   m_sharedMaterial: {fileID: 6271526809268049236, guid: 94f030611d2e5464fa92c29640aac7f2, type: 2}
@@ -630,7 +630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1393167653864186938}
-  - component: {fileID: 4508474097646576060}
+  - component: {fileID: 8278250492080614445}
   m_Layer: 5
   m_Name: Notepad
   m_TagString: Untagged
@@ -647,7 +647,7 @@ RectTransform:
   m_GameObject: {fileID: 7658558817687899059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5392, y: 1.5392, z: 1.5392}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 736710668837640521}
@@ -658,7 +658,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &4508474097646576060
+--- !u!114 &8278250492080614445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -667,10 +667,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7658558817687899059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50bb435e43de96c4e9c81f57bc08ab45, type: 3}
+  m_Script: {fileID: 11500000, guid: ce37a3264b6350741bdcf37e01a791ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notePad: {fileID: 7658558817687899059}
+  window: {fileID: 7658558817687899059}
 --- !u!1 &7934707925725555479
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Send email to team'
+  m_text: '- Send email to boss'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 94f030611d2e5464fa92c29640aac7f2, type: 2}
   m_sharedMaterial: {fileID: 6271526809268049236, guid: 94f030611d2e5464fa92c29640aac7f2, type: 2}
