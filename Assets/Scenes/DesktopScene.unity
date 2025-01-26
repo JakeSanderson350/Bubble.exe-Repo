@@ -655,6 +655,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1393167653864186938, guid: 9a7b5783a676f77499a6bb232c514417, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2710799447066386972, guid: 9a7b5783a676f77499a6bb232c514417, type: 3}
       propertyPath: m_text
       value: '- Clean up desktop'
@@ -713,7 +717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7658558817687899059, guid: 9a7b5783a676f77499a6bb232c514417, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
