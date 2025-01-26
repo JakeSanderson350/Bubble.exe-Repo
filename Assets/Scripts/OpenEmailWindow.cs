@@ -8,8 +8,11 @@ public class OpenEmailWindow : MonoBehaviour
 
     public void OpenEmail()
     {
-        emailWindow.SetActive(true);
-        readingEmail.SetActive(true);
-        typingEmail.SetActive(false);
+        if (TaskManagerScript.taskManagerInstance.taskComplete[0])
+        {
+            emailWindow.SetActive(true);
+            readingEmail.SetActive(true);
+            typingEmail.SetActive(false);
+        }
     }
 }

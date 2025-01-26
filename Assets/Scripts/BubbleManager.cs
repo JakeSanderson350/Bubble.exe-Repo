@@ -27,7 +27,7 @@ public class BubbleManager : MonoBehaviour
         }
 
         // Update difficulty every 15 seconds
-        if ((Mathf.Round(currentTime * 100.0f) / 100.0f) % 15 == 0 && numSpawns <= 5)
+        if ((Mathf.Round(currentTime * 100.0f) / 100.0f) % 15 == 0 && numSpawns <= 4)
         {
             numSpawns++;
         }

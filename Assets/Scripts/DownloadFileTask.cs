@@ -14,6 +14,10 @@ public class DownloadFileTask : MonoBehaviour
     [SerializeField]
     GameObject ParentObj;
 
+    [SerializeField]
+    GameObject adManagerPrefab;
+    GameObject adManagerInstance;
+
     private bool isDownloading = false;
     private bool isDownloaded = false;
 
@@ -97,6 +101,10 @@ public class DownloadFileTask : MonoBehaviour
             downloadScreen.SetActive(true);
             loadSpeedMultiplier = 5.0f;
 
+            // Start ad pop ups
+            adManagerInstance = Instantiate(adManagerPrefab);
+            adManagerInstance.SetActive(true);
+
             buttonText.text = "Close";
         }
     }
@@ -109,6 +117,7 @@ public class DownloadFileTask : MonoBehaviour
             //ParentObj.SetActive(false);
             downloadScreen.SetActive(false);
             
+            adManagerPrefab.SetActive(false);
         }
     }
 }

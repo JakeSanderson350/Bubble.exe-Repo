@@ -78,8 +78,8 @@ public class Bubble : MonoBehaviour
 
     private void pushBubble()
     {
-        // Every 3 seconds push bubble somewhere
-        if (currentTime < 10.0f && (Mathf.Round(currentTime * 100.0f) / 100.0f) % 3 == 0)
+        // Every 5 seconds push bubble somewhere
+        if (currentTime < 10.0f && (Mathf.Round(currentTime * 100.0f) / 100.0f) % 5 == 0)
         {
             float turnDegree = Random.Range(-45.0f, 45.0f);
             float turnRadian = turnDegree * Mathf.Deg2Rad;
@@ -94,6 +94,8 @@ public class Bubble : MonoBehaviour
         if ((Mathf.Round(currentTime * 100.0f) / 100.0f) % 16 == 0)
         {
             isMovingToPower = true;
+            //gameObject.tag = "MovingToPower";
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1.0f);
             circleCollider.enabled = true;
         }
 

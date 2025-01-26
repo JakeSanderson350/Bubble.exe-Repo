@@ -9,7 +9,7 @@ public class TaskManagerScript : MonoBehaviour
     [SerializeField] TMP_Text task3;
     [SerializeField] TMP_Text task4;
 
-    private bool[] taskComplete;
+    public bool[] taskComplete;
 
     public static TaskManagerScript taskManagerInstance;
 
@@ -33,6 +33,9 @@ public class TaskManagerScript : MonoBehaviour
     {
         task1.fontStyle = FontStyles.Strikethrough | FontStyles.Bold;
         taskComplete[0] = true;
+
+        //Start Bubbles
+        GameManager.gameInstance.turnOnBubbles();
     }
 
     public void Task2Complete()
