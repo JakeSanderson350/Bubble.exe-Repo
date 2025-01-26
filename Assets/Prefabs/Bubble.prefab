@@ -198,6 +198,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6287499944691049146}
-  powerButtonPos: {fileID: 0}
+  powerButtonPos: {x: 0, y: -5, z: 0}
   bubbleTransform: {fileID: 7240947942515122466}
   circleCollider: {fileID: 2936887292315231205}

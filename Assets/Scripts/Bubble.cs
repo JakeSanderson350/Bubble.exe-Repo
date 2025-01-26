@@ -6,8 +6,8 @@ public class Bubble : MonoBehaviour
     [SerializeField]
     Rigidbody2D rb;
 
-    [SerializeField]
-    Transform powerButtonPos;
+    
+    public Vector3 powerButtonPos;
 
     private Vector2 forceAdded;
 
@@ -22,31 +22,37 @@ public class Bubble : MonoBehaviour
     [SerializeField]
     CircleCollider2D circleCollider;
 
-    private bool isMovingToPower = false;
+    public bool isMovingToPower = false;
     private int moveCounter = 15;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         forceAdded = initForce();
+        Debug.DrawLine(transform.position, transform.position + (Vector3)forceAdded);
         rb.AddForce(forceAdded);
 
         timeOffset = Random.Range(0.0f, 5.0f);
 
-        circleCollider.enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        updateBubblePos();
+        //circleCollider.enabled = false;
     }
 
     private void FixedUpdate()
     {
         currentTime += Time.fixedDeltaTime;
 
+        updateBubblePos();
         pushBubble();
+    }
+
+    private void OnMouseOver()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            // Play Animation
+
+            Invoke("popBubble", 0.2f);
+        }
     }
 
     private Vector2 initForce()
@@ -55,7 +61,7 @@ public class Bubble : MonoBehaviour
 
         toCenter.Normalize();
 
-        int forceMag = Random.Range(5, 10);
+        int forceMag = Random.Range(20, 30);
         
         return toCenter * forceMag;
     }
@@ -79,12 +85,13 @@ public class Bubble : MonoBehaviour
             float turnRadian = turnDegree * Mathf.Deg2Rad;
 
             forceAdded = rotate(forceAdded, turnRadian);
+            forceAdded = forceAdded.normalized * Random.Range(5, 15);
             Debug.DrawLine(transform.position, transform.position + (Vector3)forceAdded);
             rb.AddForce(forceAdded);
         }
 
-        // After 10 seconds bubble moves toward button
-        if ((Mathf.Round(currentTime * 100.0f) / 100.0f) % 10 == 0)
+        // After 16 seconds bubble moves toward button
+        if ((Mathf.Round(currentTime * 100.0f) / 100.0f) % 16 == 0)
         {
             isMovingToPower = true;
             circleCollider.enabled = true;
@@ -92,15 +99,15 @@ public class Bubble : MonoBehaviour
 
         if (isMovingToPower && moveCounter > 0)
         {
-            forceAdded = powerButtonPos.position - transform.position;
+            forceAdded = powerButtonPos - transform.position;
             Debug.DrawLine(transform.position, transform.position + (Vector3)forceAdded);
             rb.AddForce(forceAdded);
 
             moveCounter--;
         }
 
-        // After 15 seconds destroy bubble
-        if ((Mathf.Round(currentTime * 100.0f) / 100.0f) % 15 == 0)
+        // After 20 seconds destroy bubble
+        if ((Mathf.Round(currentTime * 100.0f) / 100.0f) % 20 == 0)
         {
             Destroy(gameObject);
         }
@@ -112,5 +119,10 @@ public class Bubble : MonoBehaviour
             v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta),
             v.x * Mathf.Sin(delta) + v.y * Mathf.Cos(delta)
         );
+    }
+
+    private void popBubble()
+    {
+        Destroy(gameObject);
     }
 }
