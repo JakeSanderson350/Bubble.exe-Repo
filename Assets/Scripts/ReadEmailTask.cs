@@ -18,9 +18,9 @@ public class ReadEmailTask : MonoBehaviour
 
     private bool[] emailIsChecked;
 
-    private string[] emailSubjects = { "Balls", "yuh", "gagahagahgagah", "3 2 1 CCOOOOOLLLL", "Seeyuhh", "Bubble ty shi" };
-    private string[] emailSubjectsTmp;
-    private string[] emailMessages = { "Balls.....", "yuh.....", "gagahagahgagah.....", "3 2 1 CCOOOOOLLLL.....", "Seeyuhh.....", "Bubble type shi....." };
+    private string[] emailSubjects = { "Balls", "yuh", "gagahagahgagah", "Ice Cold", "Seeyuhh", "Bubble ty shi" };
+    //private string[] emailSubjectsTmp;
+    private string[] emailMessages = { "You don't know ball", "Yuhhhhhh. GET ME HYPE!!!", "gagahagahgagahghahghahhahahghhhagahghahhahaghahaghahghga", "3 2 1 CCOOOOOLLLL", "Different day\r\nI just be stylin', it's hard to sleep (schyeah)\r\nShe never made it hard for me (schyeah)\r\nI can't trust my eyes, like, how do I see?\r\nI'm in the high, uh, she's in the heat, yeah\r\nTell me why? And, for what?\r\nAlways prepared, 'cause I never know what\r\nShe wait at all of my shows, she want me to sign her butt, yeah, uh", "Bubbles YIPPEEEEEE :D" };
 
     private Dictionary<string, string> emailTable;
 
@@ -38,17 +38,17 @@ public class ReadEmailTask : MonoBehaviour
                 emailTable.Add(emailSubjects[i], emailMessages[i]);
             }
 
-            emailSubjectsTmp = new string[emailSubjects.Length];
-            for(int i = 0; i < emailSubjectsTmp.Length; i++)
-            {
-                emailSubjectsTmp[i] = emailSubjects[i].ToString();
-            }
+            //emailSubjectsTmp = new string[emailSubjects.Length];
+            //for(int i = 0; i < emailSubjectsTmp.Length; i++)
+            //{
+            //    emailSubjectsTmp[i] = emailSubjects[i].ToString();
+            //}
 
             shuffleText();
 
             for (int i = 0; i < emailSubjects.Length; i++)
             {
-                emailHeaders[i].text = emailSubjectsTmp[i];
+                emailHeaders[i].text = emailSubjects[i];
             }
         }
     }
@@ -81,7 +81,7 @@ public class ReadEmailTask : MonoBehaviour
     {
         emailIsChecked[emailIndex] = true;
 
-        emailText.text = emailTable[emailSubjectsTmp[emailIndex]];
+        emailText.text = emailTable[emailSubjects[emailIndex]];
         emailHeaders[emailIndex].text = "Checked";
     }
 
@@ -91,10 +91,10 @@ public class ReadEmailTask : MonoBehaviour
 
         for (int i = 0; i < 10; i++) 
         {
-            index1 = Random.Range(0, emailSubjectsTmp.Length);
-            index2 = Random.Range(0, emailSubjectsTmp.Length);
+            index1 = Random.Range(0, emailSubjects.Length);
+            index2 = Random.Range(0, emailSubjects.Length);
 
-            swap(emailSubjectsTmp, index1, index2);
+            swap(emailSubjects, index1, index2);
         }
     }
 
