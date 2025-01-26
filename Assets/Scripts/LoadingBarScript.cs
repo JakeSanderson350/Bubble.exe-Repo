@@ -7,7 +7,9 @@ public class LoadingBarScript : MonoBehaviour
 {
     public GameObject loadingWindow;
     public GameObject loginWindow;
-    public Image[] loadPoints;
+    public Image[] loadPoints;  
+    public AudioSource audioSource;
+    private bool playAudio = true;
 
     [SerializeField] float currentload = 0;
     [SerializeField] float loadspeedmultiplier = 0f;
@@ -16,6 +18,7 @@ public class LoadingBarScript : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         loadingWindow.SetActive(false);
     }
     void Update()
@@ -28,12 +31,15 @@ public class LoadingBarScript : MonoBehaviour
         }
         if (currentload < 200)
         {
+            
             loadspeedmultiplier = 5;
         }
 
         if (currentload > 95 && currentload <= 105)
         {
+            
             loadspeedmultiplier = 0.5f;
+            PlayAudio();
         }
         else if (currentload > 105)
         {
@@ -74,5 +80,14 @@ public class LoadingBarScript : MonoBehaviour
     void loadDesktopScene()
     {
         SceneManager.LoadScene("DesktopScene");
+    }
+
+    void PlayAudio()
+    {
+        if (playAudio)
+        {
+            audioSource.Play();
+            playAudio = false;
+        }
     }
 }
