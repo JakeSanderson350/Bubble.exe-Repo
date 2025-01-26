@@ -409,7 +409,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Accstat.exe_0: 2444087734949075113
+      Accstat.exe_1: 1526407528953790561
+      Accstat.exe_10: 2660642579773309599
+      Accstat.exe_11: -2533384975603669446
+      Accstat.exe_2: -229006299294453025
+      Accstat.exe_3: 5325443384127385836
+      Accstat.exe_4: 990485938119514166
+      Accstat.exe_5: 7295156745377584117
+      Accstat.exe_6: 4330194123859505167
+      Accstat.exe_7: -3368807594020340127
+      Accstat.exe_8: -2198994090615301880
+      Accstat.exe_9: 325686908280458978
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

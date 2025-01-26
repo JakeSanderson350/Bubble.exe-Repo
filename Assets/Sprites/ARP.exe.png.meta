@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ARP.exe_0: -7527318241031315837
+      ARP.exe_1: -7358457422169080801
+      ARP.exe_2: -2839453329841305610
+      ARP.exe_3: -215860082961438680
+      ARP.exe_4: -3982907803493795600
+      ARP.exe_5: -5282528398050892525
+      ARP.exe_6: -913007587255901655
+      ARP.exe_7: -3161017174389219283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
